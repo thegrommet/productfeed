@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<modules>
+		<Grommet_ProductFeed>
+			<version>0.0.5</version>
+		</Grommet_ProductFeed>
+	</modules>
+	<global>
+		<models>
+			<productfeed>
+				<class>Grommet_ProductFeed_Model</class>
+			</productfeed>
+		</models>
+		<blocks>
+			<productfeed>
+				<class>Grommet_ProductFeed_Block</class>
+			</productfeed>
+		</blocks>
+		<helpers>
+			<productfeed>
+				<class>Grommet_ProductFeed_Helper</class>
+			</productfeed>
+		</helpers>
+		<resources>
+			<productfeed_setup>
+				<setup>
+					<module>Grommet_ProductFeed</module>
+					<class>Mage_Catalog_Model_Resource_Setup</class>
+				</setup>
+			</productfeed_setup>
+		</resources>
+		<productfeed>
+			<linkshare translate="label" module="productfeed">
+				<title>LinkShare</title>
+				<attributes>
+					<name>
+						<map>*</map>
+						<required />
+					</name>
+					<sku>
+						<map>*</map>
+						<required />
+					</sku>
+					<image>
+						<map>*</map>
+						<required />
+					</image>
+					<short_description>
+						<map>*</map>
+						<required />
+					</short_description>
+					<description>
+						<map>*</map>
+					</description>
+					<news_from_date>
+						<map>*</map>
+					</news_from_date>
+					<meta_keyword>
+						<map>*</map>
+					</meta_keyword>
+					<primary_category>
+						<map>*</map>
+						<required />
+					</primary_category>
+
+					<!-- Optional attributes to map that are not included out-of-the-box -->
+					<!--
+					<brand>
+						<map>*</map>
+					</brand>
+					<manufacturer_part_number>
+						<map>*</map>
+					</manufacturer_part_number>
+					<manufacturer>
+						<map>*</map>
+					</manufacturer>
+					<shipping_info>
+						<map>*</map>
+					</shipping_info>
+					<upc>
+						<map>*</map>
+					</upc>
+					<shipping_info>
+						<map>shipping_details</map>
+					</shipping_info>
+					-->
+				</attributes>
+			</linkshare>
+			<rakuten translate="label" module="productfeed">
+				<title>Rakuten Marketplace</title>
+				<attributes>
+					<rakuten_category_id>
+						<map>*</map>
+						<required />
+					</rakuten_category_id>
+					<rakuten_category_fields>
+						<map>*</map>
+					</rakuten_category_fields>
+					<rakuten_feed_price>
+						<map>*</map>
+					</rakuten_feed_price>
+					<rakuten_shipping_std>
+						<map>*</map>
+					</rakuten_shipping_std>
+					<name>
+						<map>*</map>
+						<required />
+					</name>
+					<sku>
+						<map>*</map>
+						<required />
+					</sku>
+					<manufacturer_name>
+						<map>partner</map>
+						<required />
+					</manufacturer_name>
+					<manufacturer_part_number>
+						<map>sku</map>
+						<required />
+					</manufacturer_part_number>
+					<image>
+						<map>square_image</map>
+					</image>
+					<image2>
+						<map>image</map>
+						<required />
+					</image2>
+					<short_description>
+						<map>*</map>
+						<required />
+					</short_description>
+					<weight>
+						<map>*</map>
+					</weight>
+					<meta_keyword>
+						<map>*</map>
+					</meta_keyword>
+					<features>
+						<map>product_details</map>
+					</features>
+					<!-- Optional attributes to map that are not included out-of-the-box -->
+					<!--
+					<image_exclude>
+						<map>widescreen</map>
+					</image_exclude>
+					<upc>
+						<map>*</map>
+					</upc>
+					<inventory_description>
+						<map>*</map>
+					</inventory_description>
+					<isbn>
+						<map>*</map>
+					</isbn>
+					<asin>
+						<map>*</map>
+					</asin>
+					<msrp>
+						<map>*</map>
+					</msrp>
+					-->
+				</attributes>
+			</rakuten>
+			<mediaforge translate="label" module="productfeed">
+				<title>MediaForge</title>
+				<attributes>
+					<name>
+						<map>*</map>
+						<required />
+					</name>
+					<sku>
+						<map>*</map>
+						<required />
+					</sku>
+					<image>
+						<map>*</map>
+						<required />
+					</image>
+					<image2>
+						<map>small_image</map>
+					</image2>
+					<short_description>
+						<map>*</map>
+						<required />
+					</short_description>
+					<category>
+						<map>primary_category</map>
+					</category>
+				</attributes>
+			</mediaforge>
+			<tidal translate="label" module="productfeed">
+				<title>Tidal</title>
+				<attributes>
+					<name>
+						<map>*</map>
+						<required />
+					</name>
+					<short_description>
+						<map>*</map>
+						<required />
+					</short_description>
+					<image>
+						<map>*</map>
+						<required />
+					</image>
+					<image2>
+						<map>small_image</map>
+					</image2>
+					<sku>
+						<map>*</map>
+						<required />
+					</sku>
+					<category>
+						<map>primary_category</map>
+					</category>
+				</attributes>
+			</tidal>
+		</productfeed>
+	</global>
+	<frontend>
+		<routers>
+			<productfeed>
+				<use>standard</use>
+				<args>
+					<module>Grommet_ProductFeed</module>
+					<frontName>productfeed</frontName>
+				</args>
+			</productfeed>
+		</routers>
+		<layout>
+			<updates>
+				<productfeed>
+					<file>productfeed.xml</file>
+				</productfeed>
+			</updates>
+		</layout>
+		<events>
+			<!-- LinkShare specific -->
+			<controller_action_predispatch>
+				<observers>
+					<productfeed_linkshare>
+						<class>productfeed/vendor_linkShare_observer</class>
+						<method>predispatch</method>
+					</productfeed_linkshare>
+				</observers>
+			</controller_action_predispatch>
+			<sales_model_service_quote_submit_before>
+				<observers>
+					<productfeed_linkshare>
+						<class>productfeed/vendor_linkShare_observer</class>
+						<method>prepareOrder</method>
+					</productfeed_linkshare>
+				</observers>
+			</sales_model_service_quote_submit_before>
+			<checkout_type_multishipping_create_orders_single>
+				<observers>
+					<productfeed_linkshare>
+						<class>productfeed/vendor_linkShare_observer</class>
+						<method>prepareOrder</method>
+					</productfeed_linkshare>
+				</observers>
+			</checkout_type_multishipping_create_orders_single>
+			<checkout_onepage_controller_success_action>
+				<observers>
+					<productfeed_linkshare>
+						<class>productfeed/vendor_linkShare_observer</class>
+						<method>orderSuccess</method>
+					</productfeed_linkshare>
+				</observers>
+			</checkout_onepage_controller_success_action>
+			<checkout_multishipping_controller_success_action>
+				<observers>
+					<productfeed_linkshare>
+						<class>productfeed/vendor_linkShare_observer</class>
+						<method>orderSuccess</method>
+					</productfeed_linkshare>
+				</observers>
+			</checkout_multishipping_controller_success_action>
+		</events>
+	</frontend>
+	<crontab>
+        <jobs>
+            <productfeed_process_linkshare>
+                <schedule>
+					<config_path>productfeed/linkshare/cron_schedule</config_path>
+				</schedule>
+                <run>
+					<model>productfeed/cron::processLinkShareFeed</model>
+				</run>
+            </productfeed_process_linkshare>
+			<productfeed_process_linkshare_refund>
+                <schedule>
+					<cron_expr>30 23 * * *</cron_expr>
+				</schedule>
+                <run>
+					<model>productfeed/cron::processLinkShareRefunds</model>
+				</run>
+            </productfeed_process_linkshare_refund>
+			<productfeed_process_rakuten_inventory>
+                <schedule>
+					<config_path>productfeed/rakuten_inventory/cron_schedule</config_path>
+				</schedule>
+                <run>
+					<model>productfeed/cron::processRakutenInventoryFeed</model>
+				</run>
+            </productfeed_process_rakuten_inventory>
+			<productfeed_process_rakuten_product>
+                <schedule>
+					<config_path>productfeed/rakuten_product/cron_schedule</config_path>
+				</schedule>
+                <run>
+					<model>productfeed/cron::processRakutenProductFeed</model>
+				</run>
+			</productfeed_process_rakuten_product>
+			<productfeed_process_mediaforge>
+                <schedule>
+					<config_path>productfeed/mediaforge/cron_schedule</config_path>
+				</schedule>
+                <run>
+					<model>productfeed/cron::processMediaForgeFeed</model>
+				</run>
+            </productfeed_process_mediaforge>
+            <productfeed_process_tidal>
+                <schedule>
+                    <config_path>productfeed/tidal/cron_schedule</config_path>
+                </schedule>
+                <run>
+                    <model>productfeed/cron::processTidalFeed</model>
+                </run>
+            </productfeed_process_tidal>
+			<productfeed_cleanup>
+                <schedule>
+					<cron_expr>0 5 * * sun</cron_expr>
+				</schedule>
+                <run>
+					<model>productfeed/cron::cleanup</model>
+				</run>
+            </productfeed_cleanup>
+		</jobs>
+	</crontab>
+	<default>
+		<productfeed>
+			<linkshare>
+				<enabled>0</enabled>
+				<filter_feed>0</filter_feed>
+				<ftp_host>mftp.linksynergy.com</ftp_host>
+				<ftp_password backend_model="adminhtml/system_config_backend_encrypted" />
+				<cron_schedule>0 3 * * *</cron_schedule>
+				<tracking_domain>track.linksynergy.com/ep</tracking_domain>
+				<cookie_lifetime>15552000</cookie_lifetime>
+				<image_width>600</image_width>
+				<image_height>600</image_height>
+			</linkshare>
+			<mediaforge>
+				<enabled>0</enabled>
+				<filter_feed>0</filter_feed>
+				<ftp_host>ftp.mediaforge.com</ftp_host>
+				<ftp_password backend_model="adminhtml/system_config_backend_encrypted" />
+				<cron_schedule>30 3 * * *</cron_schedule>
+				<image_width>600</image_width>
+				<image_height>600</image_height>
+			</mediaforge>
+			<rakuten>
+				<filter_feed>1</filter_feed>
+				<ftp_host>trade.marketplace.buy.com</ftp_host>
+				<ftp_password backend_model="adminhtml/system_config_backend_encrypted" />
+				<image_width>600</image_width>
+				<image_height>600</image_height>
+			</rakuten>
+			<rakuten_inventory>
+				<enabled>0</enabled>
+				<cron_schedule>30 */2 * * *</cron_schedule>
+				<inventory_percentage>100</inventory_percentage>
+				<shipping_std_default>4.95</shipping_std_default>
+				<ftp_remote_folder>Inventory</ftp_remote_folder>
+			</rakuten_inventory>
+			<rakuten_product>
+				<enabled>0</enabled>
+				<cron_schedule>0 2 * * *</cron_schedule>
+				<ftp_remote_folder>NewSku</ftp_remote_folder>
+			</rakuten_product>
+            <tidal>
+                <enabled>0</enabled>
+                <cron_schedule>10 2 * * *</cron_schedule>
+				<image_width>500</image_width>
+				<image_height>500</image_height>
+            </tidal>
+		</productfeed>
+	</default>
+</config>

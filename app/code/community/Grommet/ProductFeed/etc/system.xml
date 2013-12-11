@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<sections>
+		<productfeed translate="label" module="productfeed">
+			<label>Product Feeds</label>
+			<tab>catalog</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>110</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<linkshare translate="label" module="productfeed">
+					<label>LinkShare Feed Settings</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>10</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<enabled translate="label">
+							<label>Enabled LinkShare Feed</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</enabled>
+						<filter_feed translate="label">
+							<label>Filter Feed Based on Product Attribute</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>7</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</filter_feed>
+						<merchant_id translate="label">
+							<label>Merchant ID</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</merchant_id>
+						<company translate="label">
+							<label>Company Name</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>15</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</company>
+						<ftp_host translate="label">
+							<label>FTP Host</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</ftp_host>
+						<ftp_username translate="label">
+							<label>FTP Username</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>25</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</ftp_username>
+						<ftp_password translate="label">
+							<label>FTP Password</label>
+							<frontend_type>obscure</frontend_type>
+							<backend_model>adminhtml/system_config_backend_encrypted</backend_model>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</ftp_password>
+						<ftp_remote_folder translate="label">
+							<label>FTP Remote Folder</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</ftp_remote_folder>
+						<cron_schedule translate="label">
+							<label>Cron Schedule</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+						</cron_schedule>
+						<image_width translate="label">
+							<label>Feed Image Width</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>60</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</image_width>
+						<image_height translate="label">
+							<label>Feed Image Height</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>61</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</image_height>
+						<excluded_emails translate="label comment">
+							<label>Excluded Emails from Order Tracking</label>
+							<frontend_type>textarea</frontend_type>
+							<sort_order>80</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment><![CDATA[Exclude these email addresses from pixel tracking on order place so LinkShare is not credited for the referral.<br />Separate each address with a new line. Examples include abc@gmail.com or @mydomain.com]]></comment>
+						</excluded_emails>
+						<excluded_customer_groups translate="label comment">
+							<label>Excluded Customer Groups from Order Tracking</label>
+							<frontend_type>multiselect</frontend_type>
+							<source_model>adminhtml/system_config_source_customer_group</source_model>
+							<sort_order>81</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment><![CDATA[Exclude these customer groups from pixel tracking on order place so LinkShare is not credited for the referral.]]></comment>
+						</excluded_customer_groups>
+					</fields>
+				</linkshare>
+				<mediaforge translate="label" module="productfeed">
+					<label>MediaForge Feed Settings</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>20</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<enabled translate="label">
+							<label>Enabled MediaForge Feed</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</enabled>
+						<filter_feed translate="label">
+							<label>Filter Feed Based on Product Attribute</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>7</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</filter_feed>
+						<ftp_host translate="label">
+							<label>FTP Host</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</ftp_host>
+						<ftp_username translate="label">
+							<label>FTP Username</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>25</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</ftp_username>
+						<ftp_password translate="label">
+							<label>FTP Password</label>
+							<frontend_type>obscure</frontend_type>
+							<backend_model>adminhtml/system_config_backend_encrypted</backend_model>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</ftp_password>
+						<ftp_remote_folder translate="label">
+							<label>FTP Remote Folder</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</ftp_remote_folder>
+						<cron_schedule translate="label">
+							<label>Cron Schedule</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+						</cron_schedule>
+						<image_width translate="label">
+							<label>Feed Image Width</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>60</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</image_width>
+						<image_height translate="label">
+							<label>Feed Image Height</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>61</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</image_height>
+					</fields>
+				</mediaforge>
+				<rakuten translate="label" module="productfeed">
+					<label>Rakuten Marketplace Settings</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>30</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<filter_feed translate="label">
+							<label>Filter Feed Based on Product Attribute</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>7</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</filter_feed>
+						<merchant_id translate="label">
+							<label>Seller ID</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</merchant_id>
+						<ftp_host translate="label">
+							<label>FTP Host</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</ftp_host>
+						<ftp_username translate="label">
+							<label>FTP Username</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>25</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</ftp_username>
+						<ftp_password translate="label">
+							<label>FTP Password</label>
+							<frontend_type>obscure</frontend_type>
+							<backend_model>adminhtml/system_config_backend_encrypted</backend_model>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</ftp_password>
+						<image_width translate="label">
+							<label>Feed Image Width</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>60</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</image_width>
+						<image_height translate="label">
+							<label>Feed Image Height</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>61</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</image_height>
+					</fields>
+				</rakuten>
+				<rakuten_inventory>
+					<label>Rakuten Inventory Feed Settings</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>32</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<enabled translate="label">
+							<label>Enabled Rakuten Inventory Feed</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</enabled>
+						<cron_schedule translate="label">
+							<label>Cron Schedule</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+						</cron_schedule>
+						<inventory_percentage translate="label comment">
+							<label>Inventory Exposure Percentage</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>70</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>1 - 100, expose this percentage of total available inventory to Rakuten.</comment>
+						</inventory_percentage>
+						<shipping_std_default translate="label">
+							<label>Default Standard Shipping Price</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>80</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</shipping_std_default>
+						<ftp_remote_folder translate="label">
+							<label>FTP Remote Folder</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>100</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</ftp_remote_folder>
+					</fields>
+				</rakuten_inventory>
+				<rakuten_product>
+					<label>Rakuten Product Feed Settings</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>35</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<enabled translate="label">
+							<label>Enabled Rakuten Product Feed</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</enabled>
+						<cron_schedule translate="label">
+							<label>Cron Schedule</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+						</cron_schedule>
+						<ftp_remote_folder translate="label">
+							<label>FTP Remote Folder</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>100</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</ftp_remote_folder>
+					</fields>
+				</rakuten_product>
+				<tidal>
+					<label>Tid.al Feed Settings</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>40</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<enabled translate="label">
+							<label>Enabled Tid.al Product Feed</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</enabled>
+						<cron_schedule translate="label">
+							<label>Cron Schedule</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+						</cron_schedule>
+						<image_width translate="label">
+							<label>Feed Image Width</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>60</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</image_width>
+						<image_height translate="label">
+							<label>Feed Image Height</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>61</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</image_height>
+					</fields>
+				</tidal>
+			</groups>
+		</productfeed>
+	</sections>
+</config>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+	<checkout_onepage_success>
+		<reference name="before_body_end">
+			<block type="productfeed/linkShare_trackingPixel" name="productfeed_linkshare" />
+		</reference>
+	</checkout_onepage_success>
+
+	<checkout_multishipping_success>
+		<reference name="before_body_end">
+			<block type="productfeed/linkShare_trackingPixel" name="productfeed_linkshare" />
+		</reference>
+	</checkout_multishipping_success>
+</layout>
