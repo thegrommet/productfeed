@@ -15,13 +15,13 @@ On a configurable basis, product feeds are generated for each enabled publisher 
 
 *LinkShare*
 
-* Cookie tracking for LinkShare-referred customers, with order success pixel rendering so LinkShare can be credited with a referral.
-* Order crediting exclusions by email and customer group.
-* Processing of refunded order, to get reimbursed from LinkShare for your refunds.
+* Cookie tracking for LinkShare-referred customers, with order success pixel rendering so LinkShare can be credited with a referral
+* Order crediting exclusions by email and customer group
+* Processing of refunded orders, to get reimbursed from LinkShare for your refunds
 
 *Rakuten Marketplace*
 
-* Separate product and inventory feed
+* Separate product and inventory feeds
 
 Installation
 ------------
