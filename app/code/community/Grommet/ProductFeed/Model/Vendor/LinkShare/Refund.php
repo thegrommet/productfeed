@@ -6,6 +6,8 @@
  */
 class Grommet_ProductFeed_Model_Vendor_LinkShare_Refund extends Grommet_ProductFeed_Model_Vendor_LinkShare
 {
+    const DELIMITER	= "\t";
+
 	/**
 	 * Submit refunds back to LinkShare for reimbursement.
 	 *
@@ -87,7 +89,7 @@ class Grommet_ProductFeed_Model_Vendor_LinkShare_Refund extends Grommet_ProductF
 					'order_date' => $orderDate,
 					'transaction_date' => $cmDate,
 					'sku' => $cmItem->getSku(),
-					'quantity' => $cmItem->getQty(),
+					'quantity' => round($cmItem->getQty()),
 					'amount' => ($cmItem->getBaseRowTotal() - $cmItem->getBaseDiscountAmount()) * -100,
 					'currency' => $creditmemo->getBaseCurrencyCode(),
 					'blank' => '',
@@ -115,20 +117,22 @@ class Grommet_ProductFeed_Model_Vendor_LinkShare_Refund extends Grommet_ProductF
 		$rows = array();
 		foreach ($order->getAllVisibleItems() as $item) {
 			/* @var $item Mage_Sales_Model_OrderItem */
-			$rows[] = array(
-				'order_id' => $order->getIncrementId(),
-				'site_id' => '',  // always blank
-				'order_date' => $orderDate,
-				'transaction_date' => $transDate,
-				'sku' => $item->getSku(),
-				'quantity' => $item->getQtyCanceled(),
-				'amount' => ($item->getBaseRowTotal() - $item->getBaseDiscountAmount()) * -100,
-				'currency' => $order->getBaseCurrencyCode(),
-				'blank' => '',
-				'blank' => '',
-				'blank' => '',
-				'product_name' => ''
-			);
+            if ($item->getQtyCanceled() > 0) {
+                $rows[] = array(
+                    'order_id' => $order->getIncrementId(),
+                    'site_id' => '',  // always blank
+                    'order_date' => $orderDate,
+                    'transaction_date' => $transDate,
+                    'sku' => $item->getSku(),
+                    'quantity' => round($item->getQtyCanceled()),
+                    'amount' => ($item->getBaseRowTotal() - $item->getBaseDiscountAmount()) * -100,
+                    'currency' => $order->getBaseCurrencyCode(),
+                    'blank' => '',
+                    'blank' => '',
+                    'blank' => '',
+                    'product_name' => ''
+                );
+            }
 		}
 		return $rows;
 	}
