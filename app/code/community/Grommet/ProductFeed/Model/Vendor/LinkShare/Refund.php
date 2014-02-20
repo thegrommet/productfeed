@@ -82,7 +82,7 @@ class Grommet_ProductFeed_Model_Vendor_LinkShare_Refund extends Grommet_ProductF
 		$rows = array();
 		foreach ($creditmemo->getAllItems() as $cmItem) {
 			/* @var $cmItem Mage_Sales_Model_Order_Creditmemo_Item */
-			if (!$cmItem->getOrderItem()->getParentItemId()) {
+			if ($cmItem->getBaseRowTotal()) {
 				$rows[] = array(
 					'order_id' => $creditmemo->getOrderIncrementId(),
 					'site_id' => '',  // always blank
